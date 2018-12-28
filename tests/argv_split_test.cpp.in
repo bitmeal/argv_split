@@ -1,0 +1,41 @@
+#include <stdlib.h>
+#include <string>
+#include <iostream>
+#include <cassert>
+
+#include "argv_split.h"
+
+void printArgs(const char** args)
+{
+	int i = 0;
+	while (args[i] != NULL)
+	{
+		std::cout << args[i] << std::endl;
+		++i;
+	}
+	std::cout << std::endl;
+}
+
+int main(int argc, char** argv)
+{
+	argv_split parser("${TEST_INSTANCE}");
+	parser.parse("${TEST_CMDLINE_STR}");
+
+	const char** argv_parsed = parser.argv();
+	const char** argv_cmdl = const_cast<const char**>( argv );
+	
+	printArgs(argv_parsed);
+	std::cout << "argc: " << argc << std::endl;
+	printArgs(argv_cmdl);
+		
+	int i = 1; //starting at 1 as we do not compare executable name
+	while (argv_parsed[i] != NULL && argv_cmdl[i] != NULL)
+	{
+		assert(strcmp(argv_parsed[i], argv_cmdl[i]) == 0);
+		++i;
+	}
+	// one is NULL
+	assert(argv_parsed[i] == argv_cmdl[i]);
+	
+	return EXIT_SUCCESS;
+}
