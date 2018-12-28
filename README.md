@@ -16,3 +16,9 @@ parser.parse("-p \"my flag param\" --switch='switch value'");
 const char** my_argv = parser.argv();
 ```
 
+
+
+## todo
+
+* write tests
+* add CI testing
