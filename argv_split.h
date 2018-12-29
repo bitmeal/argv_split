@@ -56,7 +56,7 @@ private:
 		return idx;
 	}
 
-	void splitStrToVectorBy(std::string& str, char delim, std::vector<std::string>& vec)
+	void splitStrToVectorBy(const std::string& str, char delim, std::vector<std::string>& vec)
 	{
 		std::stringstream strStream( str );
 		std::string element;

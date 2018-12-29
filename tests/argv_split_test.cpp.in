@@ -31,7 +31,7 @@ int main(int argc, char** argv)
 	int i = 1; //starting at 1 as we do not compare executable name
 	while (argv_parsed[i] != NULL && argv_cmdl[i] != NULL)
 	{
-		assert(strcmp(argv_parsed[i], argv_cmdl[i]) == 0);
+		assert(std::strcmp(argv_parsed[i], argv_cmdl[i]) == 0);
 		++i;
 	}
 	// one is NULL
