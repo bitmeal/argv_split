@@ -1,4 +1,5 @@
-[![Build Status](https://travis-ci.com/bitmeal/argv_split.svg?branch=master)](https://travis-ci.com/bitmeal/argv_split) [gcc-5, gcc-6, gcc-7]
+[![Build Status](https://travis-ci.com/bitmeal/argv_split.svg?branch=master)](https://travis-ci.com/bitmeal/argv_split)  
+[ G++-5, G++-6, G++-7 ]
   
 # argv split
 Simple parser to split a command line string into its components, like you'll find them in `argv`. Splits on whitespace and keeps quoted parts together. Supports single and double quotes; quotes can be nested (one level, eg: `"foo 'bar'"`) and will not be treated as quotes if escaped by a backslash (`\"` or `\'`).  
