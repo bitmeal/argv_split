@@ -23,7 +23,13 @@ endfunction(add_cmdline_test)
 ########################
 # ADD TESTS
 ########################
-add_cmdline_test(flags "-a --z=\"foo bar\"")
-add_cmdline_test(nested_quotes "\"'singlenested'\" positional")
+add_cmdline_test(flags "-a -b -cd")
+add_cmdline_test(flags_param "-a foo -b bar -cd")
+add_cmdline_test(flags_param_quoted "-a \"foo fuu\" -b \"bar\" -cd")
+add_cmdline_test(flags_param_snglquoted "-a 'foo fuu' -b 'bar' -cd")
+add_cmdline_test(nested_quotes "\"'single nested'\" positional")
+add_cmdline_test(switches_eq "--foo=bar")
+add_cmdline_test(switches_eq_quoted "--foo=\"bar bar\"")
+add_cmdline_test(switches_eq_snglquoted "--foo='bar bar'")
 
 
