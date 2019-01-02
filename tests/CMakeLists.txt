@@ -11,6 +11,7 @@ get_filename_component(ARGV_SPLIT_H_DIR ${CMAKE_SOURCE_DIR} DIRECTORY)
 ########################
 enable_testing()
 
+# add_cmdline_test(<test_name> "<quoted command line string>")
 function(add_cmdline_test TEST_INSTANCE TEST_CMDLINE_STR)
 	configure_file(argv_split_test.cpp.in ${TEST_INSTANCE}.cpp ESCAPE_QUOTES)
 	add_executable(${TEST_INSTANCE} ${TEST_INSTANCE}.cpp)
