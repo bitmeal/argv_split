@@ -32,5 +32,9 @@ add_cmdline_test(nested_quotes "\"'single nested'\" positional")
 add_cmdline_test(switches_eq "--foo=bar")
 add_cmdline_test(switches_eq_quoted "--foo=\"bar bar\"")
 add_cmdline_test(switches_eq_snglquoted "--foo='bar bar'")
+add_cmdline_test(switches_eq_quoted_multi "--foo=\"bar bar\" --fizz buzz")
+add_cmdline_test(switches_eq_quoted_multi_eq "--foo=\"bar bar\" --fizz=buzz")
+add_cmdline_test(switches_eq_quoted_multi_eq_quoted "--foo=\"bar bar\" --fizz=\"b u z z\"")
+add_cmdline_test(github_issue_2 "x=\"hello world\" -something=else")
 
 
