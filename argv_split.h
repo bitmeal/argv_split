@@ -44,8 +44,7 @@ private:
 	size_t findMatching(const std::string& str, size_t match_idx) {
 		if (match_idx == std::string::npos) return std::string::npos;
 		
-		char match[1];
-		match[0] = str.at( match_idx );
+		char match = str.at( match_idx );
 
 		size_t idx = match_idx;
 
